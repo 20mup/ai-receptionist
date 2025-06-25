@@ -1,4 +1,4 @@
-# 🤖 AIVA – AI Voice Assistant for Company Knowledge
+# 🤖 AIVA – AI Voice Assistant for Enterprises
 
 **Built during my internship at [Systems Limited](https://www.systemsltd.com/), AIVA is a fully voice-interactive assistant that allows users to ask questions and receive spoken answers about a company — powered by Whisper, GPT, FAISS, and ElevenLabs.**
 
