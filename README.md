@@ -8,7 +8,7 @@ AIVA (AI Voice Assistant) is a voice-interactive AI receptionist that can answer
 
 ## 📺 Demo
 
-[![Watch the demo](https://img.youtube.com/vi/_fyLJ0vlOlo/maxresdefault.jpg)](https://youtu.be/_fyLJ0vlOlo)
+[![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo-YouTube-red?logo=youtube)](https://youtu.be/_fyLJ0vlOlo)
 
 ---
 
