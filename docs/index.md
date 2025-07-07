@@ -1,105 +1,91 @@
-# 🤖 AIVA – AI Voice Assistant for Enterprises
-
-**Built during my internship at [Systems Limited](https://www.systemsltd.com/), AIVA is a fully voice-interactive assistant that allows users to ask questions and receive spoken answers about a company — powered by Whisper, GPT, FAISS, and ElevenLabs.**
-
----
-
-## 📌 Objective
-
-To create a voice-enabled AI receptionist that could:
-- Understand natural spoken language from users
-- Search through hundreds of company-specific documents
-- Respond with accurate, human-sounding answers
-- Be easily adapted to other companies with minimal setup
-
-This project aimed to go beyond static FAQs and deliver a fluid, human-like interaction using generative AI technologies.
+# 🧠 AIVA: AI Voice Assistant for Enterprises  
+**Built during my internship at Systems Limited**
 
 ---
 
-## 🔧 Technical Breakdown
+## 🔍 Project Background
 
-### 🧠 Knowledge Base
+In Summer 2023, I joined **Systems Limited**, Pakistan’s largest IT company, as an intern in the **Cloud & Infrastructure Division**. My internship was initially structured as a traditional corporate rotation — visiting departments, learning what they do, and preparing a final presentation.
 
-I began by scraping **100+ pages** from the Systems Limited website, including:
-- Company history, services, locations, leadership bios
-- Whitepapers, news, blog posts, and investor info
+I completed all of that in just under a week.
 
-These pages were cleaned and chunked using LangChain, then embedded into a **FAISS** vector database using OpenAI embeddings.
-
-### 🗣️ Voice Input + Transcription
-
-The app accepts voice input using a custom Streamlit component built with JavaScript.  
-Captured audio is passed to **Whisper**, which returns the full transcription.
-
-### 🤖 Query Answering Logic
-
-The transcription is processed through a **LangChain ConversationalRetrievalChain**, which:
-- Retrieves relevant chunks from FAISS
-- Pipes them into **OpenAI GPT-3.5** for final response generation
-- Maintains conversational memory across turns
-
-### 🔊 Voice Output
-
-Final GPT output is sent to **ElevenLabs**, which converts text into fluent speech using a realistic, professional voice.  
-This completes the full **voice-to-voice loop**.
+While most interns would stop there, I wasn’t satisfied with just learning. I wanted to **create something lasting**. With encouragement from my manager and VP, I pitched an original idea: to build a **voice-based AI receptionist** using the emerging power of LLMs and audio models like Whisper and ElevenLabs — a project that would go on to change how the company saw AI.
 
 ---
 
-## 💻 Technologies Used
+## 💡 The Spark Behind AIVA
 
-| Function           | Tool/Library             |
-|--------------------|--------------------------|
-| Speech Recognition | Whisper (OpenAI)         |
-| LLM Integration    | LangChain + GPT-3.5      |
-| Data Storage       | FAISS Vector Index       |
-| Text-to-Speech     | ElevenLabs               |
-| Web UI             | Streamlit                |
-| Data Collection    | Playwright (Scraping)    |
+While exploring different departments, I noticed a gap: **Systems Limited had no intelligent assistant to help onboard guests or employees**. There was someone who could give directions — but nothing more.
 
----
+At the same time, I was learning about cutting-edge tools like:
+- **Whisper** for speech-to-text
+- **LangChain** for chaining LLM-based operations
+- **FAISS** for vector-based knowledge retrieval
+- **ElevenLabs** for high-quality text-to-speech
 
-## 🎯 Key Features
+These tools were still **very new** — LangChain had only launched a few months earlier — and I saw an opportunity to integrate them into a **real, working solution**.
 
-- Fully voice-interactive — speak and receive answers
-- 100% customizable — retrainable on any company’s knowledge base
-- Supports multi-turn memory (context-aware follow-ups)
-- Natural, human-like speech via ElevenLabs
-- Streamlit frontend with fallback text input
+That weekend, I built the plan for AIVA — an AI Voice Assistant trained on company data that could answer spoken questions like:
+> “What does Systems Limited do in the healthcare sector?”
 
 ---
 
-## 💡 Challenges Faced
+## 🏗️ Development Process
 
-- **Chunking web content** effectively for vector search without noise
-- Balancing response length vs clarity from GPT
-- Handling minor transcription errors from Whisper
-- Setting up robust .env variable handling for secure API keys
-- Making sure latency stayed low despite multiple APIs in use
+### ✅ 1. Web Scraping & Data Curation  
+- Scraped **100+ public pages** from Systems Limited’s official website using BeautifulSoup.
+- Cleaned and concatenated them into vector-chunked documents.
+- Created a **FAISS index** from OpenAI embeddings to enable fast, relevant retrieval.
 
----
+### ✅ 2. LangChain-Powered Chatbot  
+- Used `ConversationalRetrievalChain` for context-aware conversations.
+- Integrated session memory to support **multi-turn interactions**.
 
-## 🧠 What I Learned
+### ✅ 3. Voice Input & Output  
+- Whisper converted microphone input to clean, accurate text.
+- ElevenLabs TTS returned a **clear, expressive voice** answer using a female assistant-style voice.
 
-- How to design modular LangChain pipelines (retrieval → memory → generation)
-- Deploying real-time Whisper + TTS in a desktop-grade app
-- Writing maintainable Python backend code in a short sprint
-- Importance of consistent formatting + chunking for retrieval quality
-
----
-
-## 📽️ Demo
-
-Watch the full demo recording here:  
-🎥 [Click to View AIVA in Action](https://drive.google.com/file/d/1JInIiivD3RBrqDqMrg24oT3hcPp_cvXB/view)
+### ✅ 4. Frontend & Deployment  
+- Built a responsive **Streamlit** interface with voice and text input modes.
+- Delivered a working prototype with modular backend logic and production-ready front-end flow.
 
 ---
 
-## 📂 GitHub + Assets
+## 📣 Presentation & Impact
+
+- Held a **live Zoom demo** for over **60 employees** across departments.
+- Received direct feedback and questions from multiple engineering teams.
+- Personally invited to demo AIVA 1-on-1 with the **President of the IT Division**.
+- Offered a **full-time role** on the spot to continue developing the tool — but turned it down to complete my degree.
+
+> “This is the direction we want to go in — and you just did it solo.”  
+> — *President, Systems Limited IT Division*
+
+---
+
+## 🌟 What Made AIVA Different
+
+- **Voice-first interface** instead of static web chat  
+- **Live knowledge updates** via web scraping and retraining  
+- **End-to-end pipeline**, built by one person in 4 weeks
+
+---
+
+## 🧠 Lessons & Reflections
+
+- Initiating a technical project from scratch inside a corporate structure is hard — but worth it.
+- LLMs are only as useful as the context you feed them. Proper chunking + embedding is everything.
+- Simple interfaces (Streamlit + audio) can outperform flashy dashboards when solving a clear problem.
+
+---
+
+## 📎 Learn More
 
 - [🔗 GitHub Repository](https://github.com/20mup/ai-receptionist)
-- [🎨 Interface Preview](../assets/images/aiva/interface.png)
-- [📸 Hero Banner](../assets/images/aiva/hero.png)
+- [🎥 Watch Demo](https://youtu.be/_fyLJ0vlOlo)
+- [🌐 Back to Portfolio](https://20mup.github.io)
 
 ---
 
-> _“AIVA gave me my first real taste of what’s possible with multimodal AI — and I built it from scratch in 4 weeks.”_
+> _Built to leave a mark, not just complete a task._  
+> — Mousa Pirzada
